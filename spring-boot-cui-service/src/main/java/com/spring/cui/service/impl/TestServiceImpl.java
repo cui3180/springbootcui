@@ -8,6 +8,7 @@ import com.spring.cui.fs.vo.TestVo;
 import com.spring.cui.tools.aspect.Log;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 
@@ -58,6 +59,5 @@ public class TestServiceImpl implements TestService{
         responseVo.setData(i);
         return responseVo;
     }
-
 
 }
