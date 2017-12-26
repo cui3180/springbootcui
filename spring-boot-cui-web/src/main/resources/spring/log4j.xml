@@ -21,7 +21,7 @@
         <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
             <level>ERROR</level>
         </filter>
-        <File>${LOG_PATH}/error-%d{yyyy-MM-dd}.log</File>
+        <File>${LOG_PATH}/error.log</File>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <fileNamePattern>${LOG_PATH}/error-%d{yyyyMMdd}.log.%i
             </fileNamePattern>

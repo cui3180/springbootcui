@@ -3,6 +3,7 @@ package com.spring.cui.web.controller;
 import com.spring.cui.fs.service.TestService;
 import com.spring.cui.fs.vo.BaseResponseVo;
 import com.spring.cui.fs.vo.TestVo;
+import com.spring.cui.web.config.redis.RedisUtil;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
@@ -23,14 +24,19 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class TestController {
      @Autowired
      private TestService testService;
+     @Autowired
+     private RedisUtil redisUtil;
 
 
-   /* @RequestMapping(value = "/index",method = {RequestMethod.POST, RequestMethod.GET})
-    public BaseResponseVo test(TestVo user){
-        log.info("我是测试啊");
-        return testService.testMothed("",1);
+    @RequestMapping(value = "/index",method = {RequestMethod.POST, RequestMethod.GET})
+    public @ResponseBody BaseResponseVo test(TestVo user){
+        BaseResponseVo responseVo =new BaseResponseVo();
+        log.info("redis 我是测试啊");
+        redisUtil.set("cuijinsong","111111111111111");
+        Object cuijinsong = redisUtil.get("cuijinsong");
+        log.info("redis test {}",cuijinsong);
+        throw new RuntimeException("测试error log");
     }
-*/
 
     @RequestMapping(value = "/rest",method = {RequestMethod.POST, RequestMethod.GET})
     public @ResponseBody  void rest(TestVo user){
