@@ -1,0 +1,9 @@
+#create by cjs 2017/11/09
+.settings/
+target/
+.idea/
+.classpath
+.project
+.externalToolBuilders
+*.iml
+#.gitignore

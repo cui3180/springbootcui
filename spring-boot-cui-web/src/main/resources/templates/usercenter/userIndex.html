@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+    <body>
+    <h1>Thymeleaf tutorial - Answer for exercise 1: bean values</h1>
+           <h2>Product information</h2> <dl>
+                    <dt>Product name</dt>
+                    <dd th:text="${user.userName}">Red Chair</dd>
+                    <dt>Product price</dt>
+                    <dd th:text="${user.userAge}">350</dd>
+                   <dt>Product available from</dt>
+                    <dd th:text="${user.id}">2014-12-01</dd>
+                </dl>
+    </body>
+
+</html>
