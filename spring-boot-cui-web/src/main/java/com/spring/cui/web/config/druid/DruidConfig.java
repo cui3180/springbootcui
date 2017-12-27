@@ -38,4 +38,6 @@ public class DruidConfig {
         filterRegistrationBean.addInitParameter("exclusions", "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*"); //不拦截地址
         return filterRegistrationBean;
     }
+
+
 }

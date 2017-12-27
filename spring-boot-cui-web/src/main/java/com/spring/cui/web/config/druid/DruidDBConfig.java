@@ -18,7 +18,6 @@ import java.sql.SQLException;
  * Time： 17:21.
  */
 @Configuration
-@PropertySource(value = "classpath:application.properties")
 public class DruidDBConfig {
     private Logger logger = LoggerFactory.getLogger(DruidDBConfig.class);
 
