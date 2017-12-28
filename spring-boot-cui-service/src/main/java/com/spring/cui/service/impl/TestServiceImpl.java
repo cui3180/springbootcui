@@ -38,7 +38,7 @@ public class TestServiceImpl implements TestService{
     @Override
     public BaseResponseVo testInterceptor(String str) {
         BaseResponseVo baseResponseVo =new BaseResponseVo();
-        baseResponseVo.setIsSuccess(false);
+        baseResponseVo.setIsSuccess(true);
         return baseResponseVo;
     }
 

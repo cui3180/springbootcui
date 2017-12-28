@@ -1,4 +1,4 @@
-package com.spring.cui.web.interceptor;
+package com.spring.cui.web.config.interceptor;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -21,7 +21,7 @@ public class InterceptorConfig {
     @Bean
     public InterceptorRegistration interceptorRegistrationBean(){
         InterceptorRegistration interceptor =new InterceptorRegistration(getMyInterceptor());
-        interceptor.addPathPatterns("/test/**");
+        interceptor.addPathPatterns("/**");
         return interceptor;
     }
 }

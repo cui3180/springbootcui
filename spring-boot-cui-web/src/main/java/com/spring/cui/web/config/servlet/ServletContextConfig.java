@@ -1,4 +1,4 @@
-package com.spring.cui.web.servlet;
+package com.spring.cui.web.config.servlet;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;

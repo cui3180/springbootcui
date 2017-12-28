@@ -1,11 +1,10 @@
-package com.spring.cui.web.interceptor;
+package com.spring.cui.web.config.interceptor;
 
 import com.alibaba.fastjson.JSONObject;
 import com.spring.cui.fs.service.TestService;
 import com.spring.cui.fs.vo.BaseResponseVo;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
