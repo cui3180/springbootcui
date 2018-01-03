@@ -1,6 +1,8 @@
 package com.spring.cui.web;
 
+import com.spring.cui.fs.service.TestService;
 import org.mybatis.spring.annotation.MapperScan;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
@@ -30,5 +32,6 @@ public class Application {
         SpringApplication.run(Application.class, args);
     }
 
-
+    @Autowired
+    private TestService testService;
 }

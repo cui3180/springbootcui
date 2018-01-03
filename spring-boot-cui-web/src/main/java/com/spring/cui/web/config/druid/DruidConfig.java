@@ -7,6 +7,7 @@ import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+
 /**
  * 启动成功
  * 访问：http://ip:port/druid/login.html即可
@@ -38,6 +39,4 @@ public class DruidConfig {
         filterRegistrationBean.addInitParameter("exclusions", "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*"); //不拦截地址
         return filterRegistrationBean;
     }
-
-
 }

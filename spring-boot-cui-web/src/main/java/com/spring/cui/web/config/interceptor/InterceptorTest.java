@@ -1,12 +1,11 @@
 package com.spring.cui.web.config.interceptor;
 
-import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson.JSON;
 import com.spring.cui.fs.service.TestService;
 import com.spring.cui.fs.vo.BaseResponseVo;
 import lombok.Cleanup;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -38,7 +37,7 @@ public class InterceptorTest  implements HandlerInterceptor {
             try {
                 httpServletResponse.setContentType("text/html;charset=UTF-8");
                 writer = httpServletResponse.getWriter();
-                writer.print(JSONObject.toJSONString(baseResponseVo));
+                writer.print(JSON.toJSONString(baseResponseVo));
             }catch (Exception e){
                 log.error("e:{}" ,e);
             }

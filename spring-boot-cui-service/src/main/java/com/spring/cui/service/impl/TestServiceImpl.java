@@ -6,6 +6,8 @@ import com.spring.cui.fs.service.TestService;
 import com.spring.cui.fs.vo.BaseResponseVo;
 import com.spring.cui.fs.vo.TestVo;
 import com.spring.cui.tools.aspect.Log;
+import com.spring.cui.tools.exception.ServiceException;
+import lombok.SneakyThrows;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -38,7 +40,7 @@ public class TestServiceImpl implements TestService{
     @Override
     public BaseResponseVo testInterceptor(String str) {
         BaseResponseVo baseResponseVo =new BaseResponseVo();
-        baseResponseVo.setIsSuccess(true);
+        baseResponseVo.setIsSuccess(false);
         return baseResponseVo;
     }
 

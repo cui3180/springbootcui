@@ -26,6 +26,5 @@ public class TestTask {
     @Log
     public void getTask() {
         System.out.println("执行:"+ new Date() + Thread.currentThread().getName());
-        //testService.testMothed("task",2,null);
     }
 }

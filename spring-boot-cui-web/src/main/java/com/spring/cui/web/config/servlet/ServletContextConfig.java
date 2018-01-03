@@ -1,7 +1,11 @@
 package com.spring.cui.web.config.servlet;
 
+import com.spring.cui.web.config.interceptor.InterceptorTest;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 
@@ -9,6 +13,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupp
  * Created by cjs
  * Date： 2017/12/13.
  * Time： 15:30.
+ * 拦截器，静态资源
  */
 @Configuration
 public class ServletContextConfig extends WebMvcConfigurationSupport {
@@ -29,6 +34,7 @@ public class ServletContextConfig extends WebMvcConfigurationSupport {
               super.addResourceHandlers(registry);
             }
 
+
     /**
        * 配置servlet处理
       */
@@ -36,4 +42,18 @@ public class ServletContextConfig extends WebMvcConfigurationSupport {
      public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
                 configurer.enable();
              }
+
+    /**
+     *拦截器
+     * @return
+     */
+    @Bean
+    public HandlerInterceptor getMyInterceptor(){
+        return new InterceptorTest();
+    }
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+        registry.addInterceptor(getMyInterceptor()).addPathPatterns("/test/rest");
+        super.addInterceptors(registry);
+    }
 }
