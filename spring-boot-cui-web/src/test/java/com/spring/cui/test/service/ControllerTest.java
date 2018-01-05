@@ -18,7 +18,7 @@ public class ControllerTest extends AbstractBaseTest {
   
     @Test
     public  void test(){
-        BaseResponseVo baseResponseVo = testService.testInterceptor("");
+        BaseResponseVo baseResponseVo = testService.testMothed("",2);
         System.out.println("2111111111111111");
     }
 

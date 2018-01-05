@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
  */
 @Slf4j
 @Controller
+@Api(description ="测试类A")
 @RequestMapping(value = "/test")
 public class TestController {
      @Autowired
@@ -33,10 +34,13 @@ public class TestController {
     public @ResponseBody BaseResponseVo test(TestVo user){
         BaseResponseVo responseVo =new BaseResponseVo();
         log.info("redis 我是测试啊");
-        redisUtil.set("cuijinsong","111111111111111");
+        //redisUtil.set("cuijinsong","111111111111111");
         Object cuijinsong = redisUtil.get("cuijinsong");
         log.info("redis test {}",cuijinsong);
-        throw new RuntimeException("测试error log");
+        responseVo.setData(cuijinsong);
+        responseVo.setIsSuccess(true);
+        responseVo.setMessage("test success");
+        return responseVo;
     }
 
     @RequestMapping(value = "/rest",method = {RequestMethod.POST, RequestMethod.GET})
@@ -50,4 +54,9 @@ public class TestController {
         return testService.addTest(test);
     }
 
+    @RequestMapping(value = "/love",method = {RequestMethod.POST, RequestMethod.GET})
+    public String love(TestVo user){
+        log.info("我是测试");
+        return "/love";
+    }
 }
