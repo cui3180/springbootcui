@@ -21,7 +21,7 @@ public class HessianBean {
 
     @Bean(name = "/service/collageService")
     public HessianServiceExporter accountService() {
-        HessianServiceExporter exporter = new HessianServiceExporter();
+        CustomHessianServiceExporter exporter = new CustomHessianServiceExporter();
         exporter.setService(testService);
         exporter.setServiceInterface(TestService.class);
         return exporter;
