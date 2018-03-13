@@ -13,7 +13,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupp
  * Created by cjs
  * Date： 2017/12/13.
  * Time： 15:30.
- * 拦截器，静态资源
+ * 拦截器，静态资源888
  */
 @Configuration
 public class ServletContextConfig extends WebMvcConfigurationSupport {
