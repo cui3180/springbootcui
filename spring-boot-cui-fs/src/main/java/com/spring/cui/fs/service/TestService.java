@@ -11,6 +11,7 @@ import com.spring.cui.fs.vo.TestVo;
 public interface TestService {
 
     /**
+     * 特特人
      * log test
      * @param ad
      * @param type
